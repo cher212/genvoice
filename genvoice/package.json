@@ -1,5 +1,6 @@
 {
   "name": "genvoice",
+  "homepage": "https://cher212.github.io/genvoice",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
