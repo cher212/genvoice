@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useNavigate } from "react-router-dom";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function Login() {
@@ -8,6 +9,7 @@ function Login() {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordVisible, setPasswordVisible] = useState(false);
+	const navigate = useNavigate();
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -20,7 +22,7 @@ function Login() {
 			password === storedUser.password
 		) {
 			localStorage.setItem("authToken", "token");
-			window.location.href = "/home";
+			navigate("/home");
 			setErrorMsg("");
 			return;
 		} else {
